@@ -1,0 +1,23 @@
+.box{
+    margin-top:20px;
+    height:140px;
+    width:200px;
+    line-height:140px;
+    font-size:50px;
+    text-align: center;
+    font-family: Arial;
+    background-color: salmon;
+    transition: 1s;
+}
+/* transform - 2d and 3d animations */
+.tx:hover{ transform:translateX(100px);}
+.ty:hover{transform:translateY(100px);}
+.t:hover{transform:translate(100px, 50px);
+}
+.rx:hover{transform: rotateX(180deg);}
+.ry:hover{
+    transform: rotateY(180deg);
+}
+.rz:hover{
+    transform: rotateZ(180deg);
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div, p{margin:0; padding:0;}
+        div{
+            border-width:2px;
+            border-style:solid;
+            margin-top:50px;
+            margin-left:50px;
+        }
+        div p{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:25px;
+        }
+        .outer{
+            border-color:black;
+            width:900px; height:500px;
+           
+        }
+        .outer>p{
+            background-color:black;
+            color:white;
+        }
+        .inner{
+            border-color:red;
+            width:700px; height:300px;
+            position:relative;
+        }
+        .inner>p{
+            background-color:red;
+            color:white;
+            
+        }
+        .innermost{
+            border-color:blue;
+            width:400px; height:150px;
+            position:absolute;
+            /* 4 properties get activated
+            1) left, 2) top 3) right 4) bottom */
+            top:50px;
+            left:50px;
+        }
+        .innermost>p{
+            background-color:blue;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <p>OUTER</p>
+        <div class="inner">
+            <p>INNER</p>
+            <div class="innermost">
+                <p>INNERMOST</p>
+            </div>
+            <p>Demo</p>
+        </div>
+    </div>
+    <!-- position:static: the positions of the div in HTML decide their positions in the document
+    POSIOTION:relative: moves the element, from it's original position, you can give
+negative values 
+    position:absolute - positions the element according to the nearest positioned ancestor
+    or the html tag. Does not reserve the original location
+        positioned element is an element that is not static -->
+</body>
+</html>

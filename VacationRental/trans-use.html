@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .switch{
+            width:200px;
+            height:150px;
+            overflow:hidden;
+        }
+        .switch .buttons{
+            width:200%;
+            height:150px;
+            display:flex;
+            transition: 1s;
+            transition-timing-function: linear;           
+        }
+        .switch:hover .buttons{
+            margin-left:-100%;
+        }
+        .buttons .btn{
+            display:flex;
+            width:50%;
+            height:150px;
+            font-size:70px;
+            align-items:center;
+            text-align: center;
+            justify-content: center;
+        }
+        .btn-on{
+            background-color:lightgreen;
+        }
+        .btn-off{
+            background-color:saLMON;
+        }
+    </style>
+</head>
+<body>
+    <div class="switch">
+        <div class="buttons">
+            <div class="btn btn-on">Off</div>
+            <div class="btn btn-off">On</div>
+        </div>
+    </div>
+    <!-- create a button
+    which when hovered upon slides the divs
+from bottom to top -->
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+        div{display:flex;}
+        .blank{
+            height:700px;
+            width:100%;
+            justify-content: center;
+            align-items: center;
+            font-size:100px;
+        }
+        .red{background-color:salmon;}
+        .blue{background-color:lightblue;}
+        .navbar{
+            padding:20px;
+            width:100%;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0,0,0, 0.5);
+            transition:0.7s;
+            position:absolute;
+        }
+        .navbar .menuitem{
+            padding:0 15px;
+            color:white;
+        }
+        .fixed{
+            position:fixed;
+            top:0;
+            left:0;
+        }
+        .navbar .logo{
+            color:white;
+        }
+        .hamburger{
+            height:50px;
+            width:50px;
+            border-radius:10px;
+            padding:7px 10px;
+            border:1px solid white;
+            background-color:transparent;
+            position:absolute;
+            top:7px;
+            right:20px;
+            z-index:-1;
+            opacity:0;
+            transition: 0.7s;
+        }
+        .hamburger .line{
+            background-color:white;
+            height:2px;
+            margin-top:7px;
+        }
+        
+        .hamburger .line:nth-of-type(1){
+            margin-top:0;
+        }
+        .hamburger-show{
+            opacity:1;
+            z-index:1;
+        }
+        @media(max-width:768px){
+            .navbar{
+                flex-direction: column;
+                align-items:flex-start;
+            }
+            .navbar .menu{
+                flex-direction:column;
+                margin-top:20px;
+            }
+            .navbar .menuitem{
+                padding:10px 0px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar" data-height="350">
+        <div class="logo"><h2>LOGO</h2></div>
+        <div class="menu">
+            <div class="menuitem">Item 1</div>
+            <div class="menuitem">Item 2</div>
+            <div class="menuitem">Item 3</div>
+            <div class="menuitem">Item 4</div>
+            <div class="menuitem">Item 5</div>
+        </div>
+        <button class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
+    </div>
+   
+    <div class="blank red">Section 1</div>
+    <div class="blank blue">Section 2</div>
+   
+    <script>
+        var navbar = document.querySelector(".navbar");
+        var hb = document.querySelector(".navbar .hamburger");
+        window.addEventListener("scroll", check);
+        window.addEventListener("resize", check2);
+        function check(){
+            var h = document.body.scrollTop || document.documentElement.scrollTop;
+            if(h > parseInt(navbar.getAttribute("data-height")))
+            {
+                if(!navbar.classList.contains("fixed"))
+                {
+                    navbar.classList.add("fixed");
+                }
+            }
+            else
+            {
+                if(navbar.classList.contains("fixed"))
+                {
+                    navbar.classList.remove("fixed");
+                }
+            }
+        }
+        function check2(){
+            if(window.innerWidth < 768){
+                if(!hb.classList.contains("hamburger-show"))
+                {
+                    hb.classList.add("hamburger-show");
+                }
+            }
+            else
+            {
+                if(hb.classList.contains("hamburger-show"))
+                {
+                    hb.classList.remove("hamburger-show");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

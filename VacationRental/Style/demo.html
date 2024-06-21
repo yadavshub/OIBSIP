@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        input{
+            padding:5px;
+            border:1px solid black;
+            font-size:18px;
+            outline:none;
+            transition:0.7s;
+            border-radius: 7px;
+        }
+        input:focus{
+            background-color: lightgrey;
+            border:2px solid black;
+        }
+        small{color:blue;}
+    </style>
+</head>
+<body>
+    <h3>Enter some text</h3>
+    <input type="text" id="myinp">
+    <small id="msg">0</small>
+
+    <script>
+        var inp = document.querySelector("#myinp");
+        var msg = document.querySelector("#msg");
+        //inp.onkeyup = function()
+        //<input type="text" onkeyup="count()">
+        inp.addEventListener("keyup", function(){
+            msg.innerText = inp.value.length;
+
+            // if(inp.value.length > 10)
+            // {
+            //     document.querySelector("#msg").innerText = "Error";
+            // }
+        });
+        inp.addEventListener("keydown", function(ev){
+            if(ev.key == "Backspace")
+            {
+                return;
+            }
+            if(ev.ctrlKey == true)
+            {
+                msg.innerText = "Ctrl key not allowed";
+                ev.preventDefault();
+            }
+            if(inp.value.length >= 10)
+            {
+                msg.innerText = "Length greater than 10";
+                ev.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>
