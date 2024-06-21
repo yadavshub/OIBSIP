@@ -1,0 +1,56 @@
+.ind-nav-contact{
+    background-color:rgb(41, 37, 37);
+}
+.ind-nav-social a, .ind-nav-email{
+    color:white;
+    font-size:12px;
+}
+.ind-carousel-item{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:600px;
+}
+.ind-carousel-caption{
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:70%;
+}
+.add-logo{
+    font-size:32px;
+    color: #fab700;
+}
+.addline{
+    align-items:flex-start;
+}
+.addline h4{
+    font-size:20px;
+}
+.addline p{
+    color:grey;
+}
+.ind-form-control{
+    border:1px solid lightgrey;
+    border-radius: 0;
+}
+.ind-btn{
+    background-color: #fab700;
+    border-radius: 20px;
+    border:1px solid #fab700;
+    outline:none;
+    padding:10px 20px;
+    font-size:12px;
+    color:white;
+    font-weight:bold;
+    transition:0.5s;
+}
+.ind-btn:hover{
+    background-color:white;
+    color:#fab700;
+}
+.bg-std{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
